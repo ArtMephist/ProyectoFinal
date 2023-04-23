@@ -1,0 +1,12 @@
+{% extends 'Plantilla.html' %}
+
+{% block content %}
+    <div class="page-content" style="background-color:#cddc39">
+    <h2>Choose your changes </h2>
+    <form method="post" enctype="multipart/form-data">     
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit" class="btn btn-primary">Apply changes</button>
+    </form>
+    </div>
+{% endblock %}

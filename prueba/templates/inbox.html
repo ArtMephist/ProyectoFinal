@@ -1,0 +1,18 @@
+{% extends 'Plantilla.html' %}
+
+{% block content %}
+    <h1>Inbox</h1>
+    <ul>
+        {% for message in messages %}
+    <li>
+        {% if message.id %}
+            <a href="{% url 'prueba:message_detail' message.id %}">
+                {{ message.subject }} - {{ message.body }}
+            </a>
+        {% else %}
+            {{ message.subject }} - {{ message.body }}
+        {% endif %}
+    </li>
+{% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'Plantilla.html' %}
+
+
+{% block content %}
+  {% load static %}
+  <link rel="stylesheet" href="{% static '/css/Propio.css'%}">
+  <div class="most-popular">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="heading-section">
+          <h1>Lista de Posts</h1>
+        </div>
+        <div class="image-grid2">
+          {% for post in latest_posts %}
+            <a href="{% url 'prueba:detail' post_id=post.id %}">
+              <div class="post2">
+                <div class="image-item2"><img src="{{ post.image.url }}" alt="{{ post.title }}"></div>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+                <p>Author: {{ post.author }}</p>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Cyborg - Awesome HTML5 Template</title>
+    {% load static %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static '/css/templatemo-cyborg-gaming.css' %}">
+    <link rel="stylesheet" href="{% static '/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static '/css/animate.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{% static '/css/Propio.css'%}">
+<!--
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="../index/" class="logo">
+                        <img src="{% static '/assets/img/logo.png'%}" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="../index/" class="active">Home</a></li>
+                        <li><a href="../post/">Post</a></li>
+                        <li><a href="../compose/">Direct Message</a></li>
+                        <li><a href="../inbox/">Inbox</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="../profile/{{ usuario }}">{{ user.username }}{% if avatar.image %} <img src="{{ avatar.image.url }}" alt="">{% endif %}</a></li>
+                        {% else %}
+                        <li><a href="../login/" style="background-color: #cddc39">Login<img src="{% static '/assets/icons/person_FILL0_wght400_GRAD0_opsz48.png'%}" alt=""></a></li>
+                        {% endif %}
+                    </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Banner Start ***** -->
+          <div class="main-banner">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="header-text">
+                  <h6>Welcome To Cyborg</h6>
+                  <h4><em>Post</em> All your loved artworks</h4>
+                  <div class="main-button">
+                    <a href="../post/">Post Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Banner End ***** -->
+
+          <!-- ***** Most Popular Start ***** -->
+          <div class="most-popular">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="heading-section">
+                  <h4><em>Latest</em> Post</h4>
+                </div>
+                <div class="image-grid2">
+                  {% for post in latest_posts %}
+                    <a href="{% url 'prueba:detail' post_id=post.id %}">
+                      <div class="post2">
+                        <div class="image-item2"><img src="{{ post.image.url }}" alt="{{ post.title }}"></div>
+                        <h2>{{ post.title }}</h2>
+                        <p>{{ post.description }}</p>
+                        <p>Author: {{ post.author }}</p>
+                      </div>
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Most Popular End ***** -->
+
+          <!-- ***** Gaming Library Start ***** -->
+          
+          <!-- ***** Gaming Library End ***** -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+            
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Here is some things <a href="../about/">About Me</a>
+          
+            <br>2023</br>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static '/js/vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{% static '/bootstrap/js/bootstrap.min.js'%}"></script>
+
+  <script src="{% static '/js/isotope.min.js'%}"></script>
+  <script src="{% static '/js/owl-carousel.js'%}"></script>
+  <script src="{% static '/js/tabs.js'%}"></script>
+  <script src="{% static '/js/popup.js'%}"></script>
+  <script src="{% static '/js/custom.js'%}"></script>
+
+
+  </body>
+
+</html>

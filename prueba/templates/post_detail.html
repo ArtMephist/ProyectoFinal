@@ -1,0 +1,33 @@
+{% extends "Plantilla.html" %}
+
+{% block content %}
+    <div class="post-container" style="display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;">
+        {% if user.is_authenticated %}
+        <a href="{% url 'prueba:delete_post' post_id=post.id %}">Eliminar</a>
+        {% endif %}
+
+        <div class="post-header" style= "display: flex;
+        align-items: center">
+        <img src="{{ post.author.avatar.image.url }}" alt="{{ post.author.username }}" class="profile-image" style ="  width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;">
+        <h4 class="post-author">{{ post.author.username }}</h4>
+        </div>
+        <div class="post-image-container" style="margin-top: 20px;
+        text-align: center;">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image" style= "  width: 500px;
+        max-width: 100%; border-radius: 20px;">
+        </div>
+        <div class="post-description" style=" margin-top: 20px;
+        text-align: justify">
+        <p style="font-size:20px">{{ post.description }}</p>
+        <p class="post-date" style="font-style: italic;font-size: 18px ;
+        margin-top: 10px;">{{ post.pub_date }}</p>
+        </div>
+    </div> 
+{% endblock %}

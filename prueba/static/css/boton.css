@@ -1,0 +1,9 @@
+#cacona {
+    background-image: url('../assets/refimg/fotito.jpg');
+    background-size: cover;
+    position: relative;
+    height: 50%;
+    width: 50%;
+    filter: blur(3px);
+    opacity: 0.4;
+  }

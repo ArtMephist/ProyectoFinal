@@ -1,0 +1,10 @@
+{% extends 'Plantilla.html'%}
+
+{% block content %}
+
+  <h3>De: {{ message.sender }}</h3>
+  <h3>Asunto: {{ message.subject }}</h3>
+  <h3>{{ message.body }}</h3>
+  <p>{{ message.sent_date }}</p>
+
+{% endblock %}

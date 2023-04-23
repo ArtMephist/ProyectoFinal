@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Cyborg - Awesome HTML5 Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static '/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static '/css/templatemo-cyborg-gaming.css' %}">
+    <link rel="stylesheet" href="{% static '/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static '/css/animate.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    {% if user.is_authenticated %}
+                    <a href="../index/" class="logo">
+                        <img src="{% static 'assets/img/logo.png' %}" alt="">
+                    {% else %}
+                    <a href="../home/" class="logo">
+                      <img src="{% static 'assets/img/logo.png' %}" alt="">
+                    {% endif %}
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    {% if user.is_authenticated %}
+                    <ul class="nav">
+                        <li><a href="../index/">Home</a></li>
+                    {% else %}
+                    <ul class="nav">
+                      <li><a href="../home/">Home</a></li>
+                    {% endif %}
+                    </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  <main style="position: fixed;top: 50%;display: flex;flex-direction: column;justify-content: center;align-items: center;left: 50%;transform: translate(-50%, -50%);" >
+    <style>
+      p {
+        color: black;
+        margin-top:10px;
+      }
+      input[type="submit"] {
+      display: block;
+      margin: auto;
+      margin-top: 10px; /* Ajusta el valor de margin-top según sea necesario */
+      }
+      .register-link{
+        float: right;
+        margin-top:-25px;
+      }
+    </style>
+    <div style="padding: 30px;background-color: #cddc39;border-radius:10px;box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
+      <form method="POST" action="">
+        {% csrf_token %}
+            {{ form.as_p}}
+        <input type="submit" value="Login" style="border-radius:5px;color:white;background-color:black"> 
+            {% if user.is_authenticated %}
+              <input type="hidden" name="next" value="../index/">
+            {% endif %}
+        <a class="register-link" href="../register" style="color:grey;">Register</a>
+      </form>
+    </div>
+  </main>
+  
+  
+  <footer>
+    <div class="container" style ="position: fixed;bottom: 0;right: 0;">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved. 
+          
+          <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a>  Distributed By <a href="https://themewagon.com" target="_blank" >ThemeWagon</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+
+  <script src="{% static '/js/isotope.min.js' %}"></script>
+  <script src="{% static '/js/owl-carousel.js' %}"></script>
+  <script src="{% static '/js/tabs.js' %}"></script>
+  <script src="{% static '/js/popup.js' %}"></script>
+  <script src="{% static '/js/custom.js' %}"></script>
+
+
+  </body>
+
+</html>

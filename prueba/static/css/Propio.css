@@ -1,0 +1,136 @@
+
+.Editar-Perfil{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #434444;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #b3b3b3;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+label[for="id_description"] {
+    display: block;
+  }
+  textarea#id_description {
+    width:100%;
+  }
+label[for="id_title"]{
+    display:block;
+    position:relative;
+    left:-30%;
+}
+#id_title{
+    position:relative;
+    left:-30%;
+}
+label[for="id_subtitle"]{
+    display:block;
+    position:relative;
+    left:-30%;
+}
+#id_subtitle{
+    position:relative;
+    left:-30%;
+}
+label[for="id_image"]{
+    display:block;
+    position:relative;
+    left:-4%;
+}
+#id_image{
+    position:relative;
+    left: 13%;
+    top:-31px;
+}
+.h2-Post{
+    position: relative;
+    left: 35%;
+}
+ 
+.Datos_Tabla_Perfil{
+    display: inline-block;
+    margin-left: 10px;
+    color: #ec6090;
+}
+.post-count-conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.username-profile{
+    color : #ec6090;
+}
+
+.image-grid {
+    margin: 20px auto;
+    width: 100%;
+}
+
+.image-grid .image-item {
+    display: inline-block;
+    margin: 10px;
+    width: calc(32.99% - 20px);
+}
+
+.image-grid .image-item img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
+.image-grid2 {
+    text-align: center;
+    margin: 30px;
+}
+.image-grid2 .image-item2 img {
+    max-width: 95%;
+    height: 250px;
+    border-radius: 8px;
+    margin: 30px;
+}
+
+.post2 {
+    display: inline-block;
+    width: 32%;
+    text-align: left;
+    vertical-align: top;
+    margin-bottom: 20px;
+    margin-right: -4px;
+}
+
+.post2:last-child {
+    margin-right: 10px;
+}
+.Form-Post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.post3{
+    display: inline-block;
+    width: 32%;
+    vertical-align: top;
+    margin-bottom:20px;
+    margin-right:-4px;
+}
+.image-item3 img{
+    max-width: 95%;
+    height: 250px;
+    border-radius: 8px;
+    margin: 30px;
+}
+
+
+
+
+
+
+
+
+
+

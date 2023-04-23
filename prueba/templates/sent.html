@@ -1,0 +1,10 @@
+{% extends 'Plantilla.html' %}
+
+{% block content %}
+    <h1>Outbox</h1>
+    <ul>
+        {% for message in messages %}
+            <li><a href="{% url 'message_detail' message.id %}">{{ message.subject }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
